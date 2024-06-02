@@ -15,16 +15,13 @@ async function verifyUser(username, password) {
   return user;
 }
 
-
 async function findUser(name) {
   const response = await axios.get(`${API_HOST}/api/users/select/${name}`);
-
   return response.data;
 }
 
 async function createUser(user) {
   const response = await axios.post(`${API_HOST}/api/users`, user);
-
   return response.data;
 }
 
@@ -58,21 +55,28 @@ async function fetchProducts() {
 // --- Cart ---------------------------------------------------------------------------------------
 async function getCart(username) {
   const response = await axios.get(`${API_HOST}/api/cart/${username}`);
+  console.log('getting payload from database:', response.data);
+
   return response.data;
 }
 
-export const addToCart = async (username, productId, quantity) => {
+async function addToCart(username, productId, quantity) {
   try {
-    const response = await axios.post('/api/cart/add', {
+    const payload = {
       username,
-      product_id: productId,
-      quantity
-    });
+      productId,
+      quantity,
+    };
+    console.log('Sending payload to addToCart:', payload);
+
+    const response = await axios.post(`${API_HOST}/api/cart/add`, payload);
     return response.data;
   } catch (error) {
+    console.error("Failed to add item to cart:", error);
     throw error;
   }
-};
+}
+
 
 async function removeFromCart(username, productId, quantity) {
   const response = await axios.post(`${API_HOST}/api/cart/remove-item`, { username, productId, quantity });
@@ -88,7 +92,6 @@ async function clearCart(username) {
     throw error;
   }
 }
-
 
 // --- Helper functions to interact with local storage --------------------------------------------
 function setUser(user) {

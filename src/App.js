@@ -41,7 +41,7 @@ function App() {
             <Route path="/register" element={<Register loginUser={loginUser} />} />
             <Route path="/profile" element={<Profile user={user} loginUser={loginUser}/>} />
             <Route path="/forum" element={<Forum user={user} />} />
-            <Route path="/shop" element={<Shop user={user}/>} />
+            <Route path="/shop" element={<Shop username={user.username}/>} />
             <Route path="/cart" element={<Cart username={user ? user.username : ''} />} /> // Pass username prop
             <Route path="/specials" element={<Specials user={user} />} />
             <Route path="/mealplan" element={<MealPlan />} />

@@ -1,0 +1,83 @@
+.specials-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.specials-container h1{
+  font-weight: 600;
+  text-align: left;
+}
+
+.specials-container p{
+  text-justify: center;
+}
+
+.specials-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 20px;
+}
+
+.specials-item {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.specials-item img {
+  width: 100%;
+  height: 35vh;
+  border-radius: 8px 8px 0 0; 
+}
+
+.specials-details {
+  padding: 15px;
+}
+
+.specials-details p {
+  margin: 5px 0;
+}
+
+.specials-options {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.specials-options input[type="number"] {
+  width: 60px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.specials-options button {
+  border: none;
+  background-color: #000000;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.specials-options button:hover {
+  text-decoration: underline;
+  background-color: #1a4415;
+}
+
+.specials-container button {
+  margin: 10px 10px 10px;
+  padding: 10px;
+  border: none;
+  background-color: #000000;
+}
+
+.specials-containeron:hover {
+  text-decoration: underline;
+  background-color: #1a4415;
+}

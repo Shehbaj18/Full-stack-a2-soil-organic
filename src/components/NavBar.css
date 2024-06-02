@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #faffb1; 
+  background-color: #033919; 
 }
 
 .navbar-brand {
@@ -16,13 +16,7 @@
   font-size: 1.2rem; 
 }
 
-.dropdown-menu {
-  background-color: #faffb1; 
-}
 
-.dropdown-item {
-  color: #000000; 
-}
 
 .dropdown-item:hover {
   text-decoration: underline;
@@ -45,5 +39,5 @@
 }
 
 .navbar .btn-primary {
-  color: #000000; 
+  color: #f8f5f5; 
 }
