@@ -1,0 +1,22 @@
+.card-body{
+    background-color: #ffb49a;
+    color: black;
+    padding-bottom: 0; /* Add this line to remove bottom padding */
+  }
+  
+  h3 {
+    font-weight: 600;
+  }
+  
+  .card-footer {
+    background-color: black;
+    text-align: left;
+}
+
+.card-footer text{
+    padding: 10px;
+}
+.card-footer a {
+    color: white; /* Change link color to white */
+  }
+  
