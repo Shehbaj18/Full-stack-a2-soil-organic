@@ -1,0 +1,71 @@
+
+
+.banner1{
+  padding: 20vh;
+
+  align-items: center;
+  background-image: url(../images/homeb2.jpg);
+  background-size: cover;
+  text-align: center;
+}
+
+/* Banner2 Styling */
+
+.banner2{
+  padding: 20vh;
+  text-align: left;
+  background-color: rgb(255, 238, 179); 
+  background-size: cover;
+}
+
+/* Banner3 Styling */
+
+.banner3{
+  padding: 20vh;
+  align-items: center;
+  background-color: #ffb49a; 
+  background-size: cover;
+  text-align: center;
+}
+
+/* Banner4 Styling */
+
+.banner4{
+  padding: 20vh;
+  align-items: center;
+  background-image: url(../images/farmers.jpg);
+  background-size: cover;
+  text-align: center;
+}
+
+/* General Button Styling */
+
+.button {
+  background-color: #000000ea;
+  border-radius: 3px;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.button:hover {
+  text-decoration: underline; 
+}
+
+/* General Text Styling */
+
+ h1{
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+
+.banner1 h2,
+.banner2 h2,
+.banner3 h2,
+.banner4 h2{
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
