@@ -4,7 +4,7 @@ SHEHBAJ SINGH KHAKH s3980305
 TANISHA s3975655 
 
 GitHub repository link:
-https://github.com/rmit-fsd-2024-s1/s3975655-s3980305-a1
+https://github.com/rmit-fsd-2024-s1/s3975655-s3980305-a2
 
 Project Title: SOIL Organics
 
