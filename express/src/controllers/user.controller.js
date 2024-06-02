@@ -10,7 +10,10 @@ exports.all = async (req, res) => {
 
 // Select one user from the database.
 exports.one = async (req, res) => {
-  const user = await db.user.findByPk(req.params.id);
+  const user = await db.user.findByPk(req.params.username);
+  if (user === null) {
+    return res.status(404).send({ message: "User not found!" });
+  }
 
   res.json(user);
 };
@@ -33,9 +36,63 @@ exports.create = async (req, res) => {
   const user = await db.user.create({
     username: req.body.username,
     password_hash: hash,
-    first_name: req.body.firstname,
-    last_name: req.body.lastname
+    email: req.body.email,
+    phone: req.body.phone,
+    joinDate: req.body.joinDate
   });
+  if (user === null) {
+    res.json(false);
+  }
+  res.json(true);
+};
 
-  res.json(user);
+exports.edit = async (req, res) => {
+  var newuser;
+  const name = req.params.username;
+  let removed = false;
+  try {
+    const user = await db.user.findByPk(name);
+    if (!user) {
+      return res.status(405).send({ message: "User not found!" });
+    }
+    if(user !== null) {
+      await user.destroy();
+      removed = true;
+    }
+    if(removed){
+      newuser = await db.user.create({
+        username: req.body.username,
+        password_hash: req.body.password_hash,
+        email: req.body.email,
+        phone: req.body.phone,
+        joinDate: req.body.joinDate
+      });
+      
+    }
+    res.json(newuser);
+  } catch (error) {
+    res.status(500).send({ message: "Error updating user with id=" + name });
+  }
+
+
+
+
+
+};
+
+exports.remove = async (req, res) => {
+  const name = req.params.username;
+
+  let removed = false;
+
+  const user = await db.user.findByPk(name);
+  if (user === null) {
+    return res.status(405).send({ message: "User not found!" });
+  }
+  if(user !== null) {
+    await user.destroy();
+    removed = true;
+  }
+
+  return res.json(removed);
 };
