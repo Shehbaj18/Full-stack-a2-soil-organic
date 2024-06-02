@@ -76,14 +76,20 @@ exports.getCartItems = async (req, res) => {
     }
 
     const cart = await db.cart.findOne({ where: { username } });
+    console.log('Fetched cart data:', cart);
+
     if (!cart) {
       return res.status(404).send({ message: "Cart not found" });
     }
+    
 
     const items = await db.cartItem.findAll({
       where: { cart_id: cart.cart_id },
       include: [{ model: db.product }]
     });
+    if (!items) {
+      return res.status(405).send({ message: "Cart not found" });
+    }
 
     res.status(200).json(items);
   } catch (error) {
